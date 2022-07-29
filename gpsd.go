@@ -239,7 +239,7 @@ func updateMetrics(t any, namespace string) {
 				if err != nil {
 					log.Fatalf("Failed to parse time %s: %s", timeStr, err)
 				}
-				dynMetricGauges[key].Set(float64(timestamp.UnixNano()))
+				dynMetricGauges[key].Set(float64(timestamp.UnixNano() / 1000000))
 			}
 		case reflect.Float64:
 			log.Tracef("Setting %s to %f\n", key, field.Interface().(float64))
