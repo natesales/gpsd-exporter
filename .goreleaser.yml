@@ -1,0 +1,46 @@
+builds:
+  - id: gpsd-exporter
+    binary: gpsd-exporter
+    goos:
+      - linux
+    goarch:
+      - amd64
+
+changelog:
+  sort: asc
+  filters:
+    exclude:
+      - "^docs:"
+      - "^test:"
+
+nfpms:
+  - id: gpsd-exporter
+    package_name: gpsd-exporter
+    file_name_template: "{{ .ProjectName }}_{{ .Version }}_{{ .Os }}_{{ .Arch }}"
+    vendor: Nate Sales
+    homepage: https://github.com/natesales/gpsd-exporter
+    maintainer: Nate Sales <nate@natesales.net>
+    description: Prometheus exporter for gpsd
+    license: MIT
+    section: default
+    priority: extra
+    formats:
+      - deb
+      - rpm
+
+publishers:
+  - name: fury.io
+    ids:
+      - gpsd-exporter
+    dir: "{{ dir .ArtifactPath }}"
+    cmd: curl -s -F package=@{{ .ArtifactName }} https://{{ .Env.FURY_TOKEN }}@push.fury.io/natesales/
+
+dockers:
+  - ids: [ "gpsd-exporter" ]
+    image_templates: [ "ghcr.io/natesales/gpsd-exporter:{{ .Version }}" ]
+    use: buildx
+    build_flag_templates:
+      - --platform=linux/amd64
+      - --label=org.opencontainers.image.version={{ .Version }}
+      - --label=org.opencontainers.image.revision={{ .FullCommit }}
+      - --label=org.opencontainers.image.licenses=MIT
