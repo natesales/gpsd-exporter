@@ -223,7 +223,7 @@
           },
           "editorMode": "builder",
           "exemplar": false,
-          "expr": "gpsd_tpv_time / 1000000",
+          "expr": "gpsd_tpv_time",
           "instant": true,
           "legendFormat": "__auto",
           "range": false,
@@ -874,8 +874,7 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green",
-                "value": null
+                "color": "green"
               },
               {
                 "color": "red",
@@ -1035,8 +1034,7 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green",
-                "value": null
+                "color": "green"
               },
               {
                 "color": "red",
@@ -1204,6 +1202,6 @@
   "timezone": "",
   "title": "GPSD",
   "uid": "YHU-OSkVk",
-  "version": 23,
+  "version": 24,
   "weekStart": ""
 }
