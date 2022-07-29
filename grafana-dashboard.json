@@ -752,7 +752,7 @@
             {
               "options": {
                 "0": {
-                  "color": "red",
+                  "color": "#9a9a9a",
                   "index": 0,
                   "text": "Ignored"
                 },
@@ -874,7 +874,8 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green"
+                "color": "green",
+                "value": null
               },
               {
                 "color": "red",
@@ -1034,7 +1035,8 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green"
+                "color": "green",
+                "value": null
               },
               {
                 "color": "red",
@@ -1202,6 +1204,6 @@
   "timezone": "",
   "title": "GPSD",
   "uid": "YHU-OSkVk",
-  "version": 24,
+  "version": 25,
   "weekStart": ""
 }
