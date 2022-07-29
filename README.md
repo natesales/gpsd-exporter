@@ -36,8 +36,8 @@ Install `gpsd-exporter` from the [apt/yum repo](https://github.com/natesales/rep
 
 ```bash
 $ gpsd-exporter
-INFO[0000] Starting metrics exporter on :9978/metrics   
-INFO[0000] Connecting to localhost:2947
+INFO[0000] Starting metrics exporter on :9978/metrics
+INFO[0000] Connecting to gpsd on localhost:2947
 ```
 
 #### Docker

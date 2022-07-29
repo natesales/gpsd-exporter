@@ -52,7 +52,7 @@ func main() {
 	go func() {
 		for {
 			if conn == nil {
-				log.Infof("Connecting to %s", *gpsdAddr)
+				log.Infof("Connecting to gpsd on %s", *gpsdAddr)
 				var err error
 				conn, err = net.Dial("tcp", *gpsdAddr)
 				if err != nil {
