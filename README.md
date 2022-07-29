@@ -1,8 +1,8 @@
 # Prometheus exporter for [gpsd](https://gpsd.io)
 
-[![Release](https://img.shields.io/github/v/release/natesales/gpsd-exporter?style=for-the-badge)](https://github.com/natesales/q/releases)
-[![Go Report](https://goreportcard.com/badge/github.com/natesales/gpsd-exporter?style=for-the-badge)](https://goreportcard.com/report/github.com/natesales/q)
-[![License](https://img.shields.io/github/license/natesales/gpsd-exporter?style=for-the-badge)](https://raw.githubusercontent.com/natesales/q/main/LICENSE)
+[![Release](https://img.shields.io/github/v/release/natesales/gpsd-exporter?style=for-the-badge)](https://github.com/natesales/gpsd-exporter/releases)
+[![Go Report](https://goreportcard.com/badge/github.com/natesales/gpsd-exporter?style=for-the-badge)](https://goreportcard.com/report/github.com/natesales/gpsd-exporter)
+[![License](https://img.shields.io/github/license/natesales/gpsd-exporter?style=for-the-badge)](https://raw.githubusercontent.com/natesales/gpsd-exporter/main/LICENSE)
 
 `gpsd-exporter` polls `gpsd` over its TCP JSON interface and exports the data to Prometheus.
 
