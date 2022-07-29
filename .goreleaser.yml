@@ -37,7 +37,9 @@ publishers:
 
 dockers:
   - ids: [ "gpsd-exporter" ]
-    image_templates: [ "ghcr.io/natesales/gpsd-exporter:{{ .Version }}" ]
+    image_templates:
+      - "ghcr.io/natesales/gpsd-exporter:latest"
+      - "ghcr.io/natesales/gpsd-exporter:{{ .Version }}"
     use: buildx
     build_flag_templates:
       - --platform=linux/amd64
