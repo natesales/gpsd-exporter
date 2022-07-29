@@ -18,3 +18,43 @@
 - gpsd Version ([VERSION](https://gpsd.io/gpsd_json.html#_version))
 
 See [gpsd's protocol responses](https://gpsd.io/gpsd_json.html#_core_protocol_responses) for more information.
+
+
+### Grafana
+
+![Grafana](grafana.png)
+
+A simple dashboard is available to [import into Grafana](https://grafana.com/docs/grafana/latest/dashboards/export-import/#import-dashboard) from the gpsd-exporter [Grafana JSON file](https://raw.githubusercontent.com/natesales/gpsd-exporter/main/grafana-dashboard.json).
+
+### Quickstart
+
+With `gpsd` running on `localhost:2947`:
+
+#### Linux
+
+Install `gpsd-exporter` from the [apt/yum repo](https://github.com/natesales/repo) or build with `go build`
+
+```bash
+$ gpsd-exporter
+INFO[0000] Starting metrics exporter on :9978/metrics   
+INFO[0000] Connecting to localhost:2947
+```
+
+#### Docker
+
+```bash
+docker run -p 9978:9978 ghcr.io/natesales/gpsd-exporter
+``` 
+
+### Usage
+
+```bash
+Usage of ./gpsd-exporter:
+  -d string
+        gpsd address (default "localhost:2947")
+  -l string
+        metrics listen address (default ":9978")
+  -v    Enable verbose logging
+  -vv
+        Enable extra verbose logging
+```
