@@ -16,8 +16,8 @@ import (
 var (
 	gpsdAddr      = flag.String("d", "localhost:2947", "gpsd address")
 	metricsListen = flag.String("l", ":9978", "metrics listen address")
-	verbose       = flag.Bool("v", false, "verbose")
-	trace         = flag.Bool("vv", false, "trace")
+	verbose       = flag.Bool("v", false, "Enable verbose logging")
+	trace         = flag.Bool("vv", false, "Enable extra verbose logging")
 )
 
 var (
