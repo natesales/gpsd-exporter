@@ -54,7 +54,9 @@ Usage of ./gpsd-exporter:
         gpsd address (default "localhost:2947")
   -l string
         metrics listen address (default ":9978")
-  -v    Enable verbose logging
+  -p duration
+        gpsd poll interval (default 10s)
+  -v    enable verbose logging
   -vv
-        Enable extra verbose logging
+        enable extra verbose logging
 ```

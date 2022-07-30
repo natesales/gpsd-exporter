@@ -16,8 +16,9 @@ import (
 var (
 	gpsdAddr      = flag.String("d", "localhost:2947", "gpsd address")
 	metricsListen = flag.String("l", ":9978", "metrics listen address")
-	verbose       = flag.Bool("v", false, "Enable verbose logging")
-	trace         = flag.Bool("vv", false, "Enable extra verbose logging")
+	pollInterval  = flag.Duration("p", time.Second*10, "gpsd poll interval")
+	verbose       = flag.Bool("v", false, "enable verbose logging")
+	trace         = flag.Bool("vv", false, "enable extra verbose logging")
 )
 
 var (
@@ -74,7 +75,7 @@ func main() {
 	}()
 
 	// Poll for updates
-	pollTicker := time.NewTicker(time.Second * 1)
+	pollTicker := time.NewTicker(*pollInterval)
 	go func() {
 		log.Debug("Starting poll ticker")
 		for range pollTicker.C {
