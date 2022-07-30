@@ -86,7 +86,7 @@ func main() {
 					_ = conn.Close()
 					conn = nil
 				}
-				metricLastPoll.SetToCurrentTime()
+				metricLastPoll.Set(float64(time.Now().UTC().UnixNano() / 1000000))
 			} else {
 				log.Debug("Not connected, not sending POLL command")
 			}
